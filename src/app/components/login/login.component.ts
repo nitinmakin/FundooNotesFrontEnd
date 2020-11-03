@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 
-export class RegisterComponent implements OnInit {
+
+
+export class LoginComponent implements OnInit {
+
+
 
   hide = true;
-
+  
   email = new FormControl('', [Validators.required, Validators.email]);
   getErrorMessage() {
     if (this.email.hasError('required')) {
@@ -18,6 +21,7 @@ export class RegisterComponent implements OnInit {
     }
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
+
   constructor() { }
 
   ngOnInit(): void {

@@ -13,18 +13,18 @@
 <h3>Create your fundoo account</h3>
 
 <div fxLayout="row">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="Name">
         <mat-label>First Name</mat-label>
-        <input matInput placeholder="First Name">
+        <input matInput placeholder="First Name" required>
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="Name">
         <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Last Name">
+        <input matInput placeholder="Last Name" required>
       </mat-form-field>
       <br><br>
 </div>
-   <mat-form-field appearance="outline" class="Email">
+<mat-form-field appearance="outline" class="Email">
     <mat-label>Username</mat-label>
     <input matInput placeholder="pat@example.com">
     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
@@ -32,23 +32,24 @@
     <h5>you can use letters, numbers and symbols</h5>
     <br>
 
-<div fxLayout="row" fxLayoutAlign="start center">
-<mat-form-field appearance="outline">
+<div fxLayout="row" fxLayoutAlign="start center" >
+<mat-form-field appearance="outline" class="Name" >
     <mat-label>Password</mat-label>
     <input matInput [type]="hide ? 'password' : 'text'">
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="outline" class="Name">
     <mat-label>Confirm</mat-label>
     <input matInput [type]="hide ? 'password' : 'text'">
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
   </mat-form-field>
-  <h5>Use 8 or more characters with a mix of letters, numbers & symbols</h5>
+ 
 </div>
+<h5>Use 8 or more characters with a mix of letters, numbers & symbols</h5>
 <div class="Button">
-<a href="" class="Link">sign in instead</a>
+<a href="/login" class="Link">sign in instead</a>
 <button type="submit" mat-flat-button color="primary">Register</button>
 
 </div>
