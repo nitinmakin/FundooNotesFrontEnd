@@ -1,0 +1,63 @@
+<div class="Main">
+
+<div class="FormContainer">
+
+    <div class="fundoo">
+        <span class="blue">F</span>
+        <span class="red">u</span>
+        <span class="yellow">n</span>
+        <span class="blue">d</span>
+        <span class="green">o</span>
+        <span class="red">o</span>
+    </div>
+<h3>Create your fundoo account</h3>
+
+<div fxLayout="row">
+    <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name">
+      </mat-form-field>
+      <br><br>
+</div>
+   <mat-form-field appearance="outline" class="Email">
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="pat@example.com">
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <h5>you can use letters, numbers and symbols</h5>
+    <br>
+
+<div fxLayout="row" fxLayoutAlign="start center">
+<mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Confirm</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <h5>Use 8 or more characters with a mix of letters, numbers & symbols</h5>
+</div>
+<div class="Button">
+<a href="" class="Link">sign in instead</a>
+<button type="submit" mat-flat-button color="primary">Register</button>
+
+</div>
+</div>
+
+
+<div>
+    <img src="../../../assets/account.svg" class="image">
+</div>
+
+</div>
+
