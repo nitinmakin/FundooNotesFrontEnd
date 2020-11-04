@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,  FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from "../../Services/user-service.service";
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -12,11 +12,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 export class LoginComponent implements OnInit {
   hide = true;
-  form:FormGroup;
+  form: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserServiceService, 
-    public snakeBar: MatSnackBar)
-   { 
+  constructor(private fb: FormBuilder, private userService: UserServiceService,
+    public snakeBar: MatSnackBar) {
     this.form = this.fb.group({
       Email: ["", Validators.email],
       Password: ["", Validators.pattern('[A-Za-z0-9\\d!$%@#£€*?&]{8,}$')],
