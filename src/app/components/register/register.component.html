@@ -1,64 +1,84 @@
 <div class="Main">
 
-<div class="FormContainer">
+    <div class="FormContainer">
 
-    <div class="fundoo">
-        <span class="blue">F</span>
-        <span class="red">u</span>
-        <span class="yellow">n</span>
-        <span class="blue">d</span>
-        <span class="green">o</span>
-        <span class="red">o</span>
+        <div class="fundoo">
+            <span class="blue">F</span>
+            <span class="red">u</span>
+            <span class="yellow">n</span>
+            <span class="blue">d</span>
+            <span class="green">o</span>
+            <span class="red">o</span>
+        </div>
+        <h3>Create your fundoo account</h3>
+        <form [formGroup]="form" >
+
+        <div fxLayout="row" fxLayout.lt-sm="column">
+            <mat-form-field appearance="outline" class="Name">
+                <mat-label>First Name</mat-label>         
+                <input formControlName="FirstName" matInput placeholder="First Name" required>
+                <mat-error *ngIf="form.controls.FirstName.hasError('pattern') && !form.controls.firstFormControl.hasError('required')">
+                    please enter valid name
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="Name">
+                <mat-label>Last Name</mat-label>
+                <input formControlName="LastName" matInput placeholder="Last Name" required>
+                <mat-error *ngIf="form.controls.LastName.hasError('pattern') && !form.controls.firstFormControl.hasError('required')">
+                    please enter valid name
+                </mat-error>
+            </mat-form-field>
+            <br><br>
+        </div>
+
+        <mat-form-field appearance="outline" class="Email">
+            <mat-label>Username</mat-label>
+            <input formControlName="Email" matInput placeholder="pat@example.com"  required>
+            <mat-error *ngIf="form.controls.Email.hasError('required')">
+                email is required
+            </mat-error>
+            <mat-error *ngIf="form.controls.Email.hasError('email')&& !form.controls.emailFormControl.hasError('required')">
+                please enter valid email id
+            </mat-error>
+        </mat-form-field>
+        
+        <h5>you can use letters, numbers and symbols</h5>
+        <br>
+
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <mat-form-field appearance="outline" class="Name">
+                <mat-label>Password</mat-label>
+                <input formControlName="Password" matInput [type]="hide ? 'password' : 'text'" required>
+                <mat-error *ngIf="form.controls.Password.hasError('pattern') && !form.controls.passFormControl.hasError('required')">
+                    password must have atleast 1 letter, 1 number, 1symbol and 8 char long
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="Name">
+                <mat-label>Confirm</mat-label>
+                <input formControlName="Conform" matInput [type]="hide ? 'password' : 'text'" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-error *ngIf="form.controls.Conform.hasError('pattern') && !form.controls.passFormControl.hasError('required')">
+                        password must have atleast 1 letter, 1 number, 1symbol and 8 char long
+                    </mat-error>
+                </button>
+            </mat-form-field>
+
+        </div>
+        <h5>Use 8 or more characters with a mix of letters, numbers & symbols</h5>
+        <div class="Button">
+            <a href="/login" class="Link">sign in instead</a>
+            <button type="submit" mat-flat-button color="primary" (click)="onubmit()">Register</button>
+
+        </div>
+    </form>
     </div>
-<h3>Create your fundoo account</h3>
 
-<div fxLayout="row">
-    <mat-form-field appearance="outline" class="Name">
-        <mat-label>First Name</mat-label>
-        <input matInput placeholder="First Name" required>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" class="Name">
-        <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Last Name" required>
-      </mat-form-field>
-      <br><br>
-</div>
-<mat-form-field appearance="outline" class="Email">
-    <mat-label>Username</mat-label>
-    <input matInput placeholder="pat@example.com">
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
-    <h5>you can use letters, numbers and symbols</h5>
-    <br>
-
-<div fxLayout="row" fxLayoutAlign="start center" >
-<mat-form-field appearance="outline" class="Name" >
-    <mat-label>Password</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'">
-  </mat-form-field>
-
-  <mat-form-field appearance="outline" class="Name">
-    <mat-label>Confirm</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'">
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-  </mat-form-field>
- 
-</div>
-<h5>Use 8 or more characters with a mix of letters, numbers & symbols</h5>
-<div class="Button">
-<a href="/login" class="Link">sign in instead</a>
-<button type="submit" mat-flat-button color="primary">Register</button>
+    <div>
+        <img src="../../../assets/account.svg" class="image">
+    </div>
 
 </div>
-</div>
-
-
-<div>
-    <img src="../../../assets/account.svg" class="image">
-</div>
-
-</div>
-

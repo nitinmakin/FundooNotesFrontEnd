@@ -1,5 +1,4 @@
-
-   <div  class="Main">
+<div class="Main">
     <div class="fundoo">
         <span class="blue">F</span>
         <span class="red">u</span>
@@ -9,29 +8,41 @@
         <span class="red">o</span>
     </div>
 
-   
+
     <h2>Sign in</h2>
 
     <h4>to continue to Fundoo</h4><br>
-
+    <form [formGroup]="form" >
     <mat-form-field appearance="outline" class="Email">
         <mat-label>Email or phone</mat-label>
-        <input matInput>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
+        <input matInput formControlName="Email" required>
+        <mat-error *ngIf="form.controls.Email.hasError('required')">
+            email is required
+        </mat-error>
+        <mat-error *ngIf="form.controls.Email.hasError('email')&& !form.controls.Email.hasError('required')">
+            please enter valid email id
+        </mat-error>
+    </mat-form-field>
 
-        <mat-form-field appearance="outline" class="Email">
-            <mat-label>Confirm</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-form-field appearance="outline" class="Email">
+        <mat-label>Confirm</mat-label>
+        <input formControlName="Password" matInput [type]="hide ? 'password' : 'text'" required>
+        <mat-error *ngIf="form.controls.Password.hasError('pattern') && !form.controls.Password.hasError('required')">
+            password must have atleast 1 letter, 1 number, 1symbol and 8 char long
+        </mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          </mat-form-field>
-        
-            <a href="/forget-password" class="ForgetPassword">Forgot password?</a><br><br>
-           
-            <div fxLayout="row" fxLayoutAlign="space-around center" >
-                <a href="/register" class="CreateAccount" >Create account</a>
-                <button type="submit" mat-flat-button color="primary" class="Button">Register</button>
-                </div>
+        </button>
+    </mat-form-field><br>
+
+    <a href="/forget-password" class="ForgetPassword">Forgot password?</a><br><br><br><br>
+
+
+    <div fxLayout="row" fxLayoutAlign="space-around center">
+        <a href="/register" class="CreateAccount">Create account</a>
+        <button type="submit" mat-flat-button color="primary" class="Button" (click)="onubmit()">Login</button>
+    </div>
+
+    </form>
 </div>
