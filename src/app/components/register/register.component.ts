@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from "../../Services/user-service.service";
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -13,23 +14,24 @@ export class RegisterComponent implements OnInit {
   hide = true;
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserServiceService) {
-    this.form = this.fb.group({
+  constructor(private fb: FormBuilder, private userService: UserServiceService,
+    public snakeBar: MatSnackBar) {
+      this.form = this.fb.group({
 
-      FirstName: ["", Validators.pattern('[a-zA-Z]{2,}')],
-
-      LastName: ["", Validators.pattern('[a-zA-Z]{2,}')],
-
-      Email: ["", Validators.email],
-
-      Password: ["", Validators.pattern('[A-Za-z0-9\\d!$%@#£€*?&]{8,}$')],
-
-      Conform: [""]
-
-    })
+        FirstName: ["", Validators.pattern('[a-zA-Z]{2,}')],
+  
+        LastName: ["", Validators.pattern('[a-zA-Z]{2,}')],
+  
+        Email: ["", Validators.email],
+  
+        Password: ["", Validators.pattern('[A-Za-z0-9\\d!$%@#£€*?&]{8,}$')],
+  
+        Conform: [""]
+  
+      })
   }
 
-  onubmit() {
+  LoadData() {
     let userData = {
       "firstName": this.form.controls.FirstName.value,
       "lastName": this.form.controls.LastName.value,
@@ -40,10 +42,13 @@ export class RegisterComponent implements OnInit {
     
     console.log(userData)
     this.userService.register(userData).subscribe((result: any) => {
+      this.snakeBar.open("Thankyou for joining with us", 'cancel')
       console.log(result)
     },
       (error) => {
+        this.snakeBar.open("OOPS..somethimg went wrong...", 'cancel')
         console.log(error)
+
       })
 
     console.log(this.form.value)

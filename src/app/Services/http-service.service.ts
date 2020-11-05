@@ -13,15 +13,11 @@ export class HttpServiceService {
 
   Url = environment.baseUrl; 
 
-  register(url, user){
-    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
-    console.log(" https called"); return this.httpClient.post(this.Url + url, user, options)
-  };
+  post(url, user, isHeaderRequired=false, header=null){
+  return this.httpClient.post(url, user, isHeaderRequired && header)
+  }
+
   
-  login(url, user){
-    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
-    console.log(" https called"); return this.httpClient.post(this.Url + url, user, options)
-  };
 
    
   

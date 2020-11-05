@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { UserServiceService } from "../../Services/user-service.service";
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,8 +20,8 @@ export class LoginComponent implements OnInit {
       Password: ["", Validators.pattern('[A-Za-z0-9\\d!$%@#£€*?&]{8,}$')],
     })
   }
-
-  onubmit() {
+  
+  LoadData() {
     let userData = {
       "email": this.form.controls.Email.value,
       "password": this.form.controls.Password.value,
@@ -30,12 +29,12 @@ export class LoginComponent implements OnInit {
 
     console.log(userData)
     this.userService.login(userData).subscribe((result: any) => {
-      this.snakeBar.open("login successfull.", 'success')
+      this.snakeBar.open("login successfull.", 'cancel')
       console.log(result)
     },
       (error) => {
         console.log(error)
-        this.snakeBar.open("login unsuccessfully.", 'failed')
+        this.snakeBar.open("login unsuccessfully.", 'cancel')
       })
 
     console.log(this.form.value)
