@@ -5,7 +5,6 @@ import { environment } from "../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
-
 export class HttpServiceService {
   constructor(private httpClient: HttpClient) {
   }
@@ -13,7 +12,6 @@ export class HttpServiceService {
   post(url, user, isHeaderRequired=false, header=null){
     return this.httpClient.post(url, user, isHeaderRequired && header)
     }
-
     // get(url, user, isHeaderRequired=false, header=null){
     //   return this.httpClient.get(url, user, isHeaderRequired && header)
     //   }
