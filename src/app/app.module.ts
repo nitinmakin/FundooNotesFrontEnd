@@ -28,6 +28,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { CreatenotesComponent } from './components/createnotes/createnotes.component';
+import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CreatenotesComponent } from './components/createnotes/createnotes.compo
     ForgotpasswordComponent,
     ResetpasswordComponent,
     DashboardComponent,
-    CreatenotesComponent
+    CreatenotesComponent,
+    DisplayNotesComponent
   ],
   imports: [
     MatSelectModule,
