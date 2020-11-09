@@ -8,9 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-
 export class RegisterComponent implements OnInit {
-
   hide = true;
   form: FormGroup;
 
@@ -30,7 +28,6 @@ export class RegisterComponent implements OnInit {
   
       })
   }
-
   LoadData() {
     let userData = {
       "firstName": this.form.controls.FirstName.value,
@@ -39,7 +36,7 @@ export class RegisterComponent implements OnInit {
       "email": this.form.controls.Email.value,
       "password": this.form.controls.Conform.value,
     }
-    
+if(this.form.valid){
     console.log(userData)
     this.userService.register(userData).subscribe((result: any) => {
       this.snakeBar.open("Thankyou for joining with us", 'cancel')
@@ -48,12 +45,12 @@ export class RegisterComponent implements OnInit {
       (error) => {
         this.snakeBar.open("OOPS..somethimg went wrong...", 'cancel')
         console.log(error)
-
       })
+
+    }
 
     console.log(this.form.value)
   }
-
   ngOnInit(): void {
   }
 }

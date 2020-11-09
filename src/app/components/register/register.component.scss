@@ -52,8 +52,6 @@
    justify-content: space-between;
    padding-right: 40px;
 }
-
-
   .fundoo {
     font-size: 25px;
     font-weight: bold;
@@ -82,25 +80,30 @@
 }
 
 .Name{
-     padding-right: 3%;
-    width: 210px;
+    padding-right: 3%;
+   width: 210px;
 }
 
 @media screen and (max-width:600px) {
     .Button {
       display: flex;
-      width: 200px;
+      width: 100%;
     }
     .FormContainer{
-       width: 300px; 
+       width: 400px; 
+      padding-left: 10%;
+      padding-right: 10%;
        
     }
     .Email{
-        width: 210px;   
+        width: 100%;   
     }
     .Main{
-        border: none;
-       
+        border: none; 
     }
+    .Name{
+      
+       width: 100%;
+   }
   
 }

@@ -1,0 +1,101 @@
+.MainContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.TopBar{
+    display: flex;
+     border: 1px solid rgb(199, 199, 198);
+    height: 70px;
+    width: auto;
+    justify-content: space-between;
+}
+
+.MenuButton{
+  border: none;
+
+}
+
+.Keep{
+    color: rgb(216, 213, 213);
+    margin-top: 7px;
+    padding-right: 50px ; 
+}
+
+.SearchBar{
+border-color: rgb(212, 212, 212);
+width: 800px;
+height: 45px;
+border: none;
+background-color: whitesmoke;
+border-radius: 10px;
+size: 40px;
+outline: none;
+}
+
+.LogoutButton{
+  border: none;
+  color: rgb(133, 125, 125);
+  font-weight: bold;
+  width: 80px;
+  background-color: rgb(187, 189, 190);
+}
+
+.Menu1{
+      padding-left: 110px;
+}
+
+.BodyContainer {
+  position: absolute;
+  top: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.SlideBar{
+  top: 10%;
+  width: 200px;
+}
+
+
+.mat-list-option[aria-selected="true"] {
+  background-color: rgba(255, 196, 0, 0.562);
+ }
+.mat-list-option:hover {
+  background-color: rgba(128, 128, 128, 0.575);
+}
+
+.SlideBarOption {
+  border-radius: 1px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.SideBarIcon{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+}
+
+
+@media screen and (max-width:500px) {
+
+
+
+
+.Keep{
+  padding-right: 5px;
+}
+
+.Menu1{
+  padding-left: 1px;
+}
+
+.SearchBar{
+  width: 150px;
+  outline: none;
+}
+}

@@ -1,30 +1,35 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth.guard';
+import { CreatenotesComponent } from './components/createnotes/createnotes.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 
 const routes: Routes = [
-
 {
 path: 'register', component: RegisterComponent
 },
-
 {
-  path: 'login', component: LoginComponent
+  path: 'login', component: LoginComponent,
+  
 },
-
 {
   path: 'forget-password', component: ForgotpasswordComponent
 },
-
 {
-  path: 'reset-password', component: ResetpasswordComponent
+  path: 'reset-password/:token', component: ResetpasswordComponent
+},
+{
+  path: 'dashboard', component: DashboardComponent,
+   canActivate: [AuthGuard]
+ 
+},
+{
+  path: 'createnotes', component:CreatenotesComponent,
 }
-
-
-
 ];
 
 @NgModule({

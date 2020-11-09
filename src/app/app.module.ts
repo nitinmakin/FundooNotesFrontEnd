@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -16,6 +17,18 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { StorageServiceModule } from "ngx-webstorage-service";
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { TextFieldModule } from '@angular/cdk/text-field';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { CreatenotesComponent } from './components/createnotes/createnotes.component';
+
 
 @NgModule({
   declarations: [
@@ -23,9 +36,19 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     RegisterComponent,
     LoginComponent,
     ForgotpasswordComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    DashboardComponent,
+    CreatenotesComponent
   ],
   imports: [
+    MatSelectModule,
+    MatMenuModule,
+    TextFieldModule,
+    MatListModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatSidenavModule,
+    MatToolbarModule,
     BrowserModule,
     AppRoutingModule,
     MatFormFieldModule,
@@ -38,9 +61,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    StorageServiceModule,
+    MatButtonToggleModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 

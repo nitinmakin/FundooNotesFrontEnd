@@ -1,0 +1,115 @@
+.back-card .mat-form-field {
+    width: 90%;
+    height: 7px;
+  }
+
+  .front-card {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 25px;
+    border-radius: 10px;
+  }
+
+  .back-card {
+    width: 500px;
+    border-radius: 10px;
+  }
+  .mat-icon {
+    cursor: pointer;
+  }
+  
+  .settings {
+    flex: 1 1 auto;
+  }
+  
+  .mat-form-field {
+    width: 90%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.MainContainer{
+height: 100%;
+width: 100%;
+}
+
+.MatCard{
+  width: 600px;
+  height: 17px;
+  margin-top: 30px;
+  background-color:rgb(255, 253, 253);
+  font-weight: bold;
+  color: rgb(153, 152, 152);
+  border: none;
+  outline: none;
+ box-shadow: blue;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ border-radius: 10px;
+
+}
+
+.MatCard1{
+  width: 600px;
+  height: 90px;
+  margin-top: 30px;
+  background-color:rgb(255, 254, 254);
+  font-weight: bold;
+  color: rgb(179, 179, 179);
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  
+}
+
+.CloseButton{
+background-color:white;
+border: none;
+font-size: larger;
+font-weight: bold;
+color: rgb(139, 139, 139);
+
+}
+
+.Title{
+  width: auto;
+  height: 30px;
+  border: none;
+  outline: none;
+}
+
+
+@media screen and (max-width:750px) {
+
+  .MatCard{
+    width: 400px;
+  }
+
+  .MatCard1{
+    width: 400px;
+  }
+
+}
+
+@media screen and (max-width:600px) {
+  .MatCard{
+    width: 200px;
+  }
+
+  .MatCard1{
+    width: 200px;
+  }
+}

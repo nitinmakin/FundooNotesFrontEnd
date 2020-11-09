@@ -16,7 +16,7 @@
     <h4>to continue to Fundoo</h4><br>
     <form [formGroup]="form">
         <mat-form-field appearance="outline" class="Email">
-            <mat-label>Email or phone</mat-label>
+            <mat-label>Email</mat-label>
             <input matInput formControlName="Email" required>
             <mat-error *ngIf="form.controls.Email.hasError('required')">
                 email is required
@@ -27,7 +27,7 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="Email">
-            <mat-label>Confirm</mat-label>
+            <mat-label>Password</mat-label>
             <input formControlName="Password" matInput [type]="hide ? 'password' : 'text'" required>
             <mat-error
                 *ngIf="form.controls.Password.hasError('pattern') && !form.controls.Password.hasError('required')">
