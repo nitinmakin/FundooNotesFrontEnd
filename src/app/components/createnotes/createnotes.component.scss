@@ -1,46 +1,3 @@
-.back-card .mat-form-field {
-    width: 90%;
-    height: 7px;
-  }
-
-  .front-card {
-    display: flex;
-    align-items: center;
-    width: 500px;
-    height: 25px;
-    border-radius: 10px;
-  }
-
-  .back-card {
-    width: 500px;
-    border-radius: 10px;
-  }
-  .mat-icon {
-    cursor: pointer;
-  }
-  
-  .settings {
-    flex: 1 1 auto;
-  }
-  
-  .mat-form-field {
-    width: 90%;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .MainContainer{
 height: 100%;
 width: 100%;
@@ -63,33 +20,46 @@ width: 100%;
 
 .MatCard1{
   width: 600px;
-  height: 90px;
+  height: 110px;
   margin-top: 30px;
   background-color:rgb(255, 254, 254);
   font-weight: bold;
-  color: rgb(179, 179, 179);
+ // color: rgb(179, 179, 179);
   border: none;
   outline: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   
 }
-
+.Menu1{
+  color: black;
+}
 .CloseButton{
 background-color:white;
 border: none;
 font-size: larger;
 font-weight: bold;
 color: rgb(139, 139, 139);
-
+padding-left: 250px;
 }
 
+.Buttons{
+  border: none;
+  background-color: white;
+  outline: none;
+  color: rgb(94, 94, 94);
+}
 .Title{
   width: auto;
   height: 30px;
   border: none;
   outline: none;
 }
+// .ButtonsMargin{
+//   width: 700px;
+//   border: 1px solid rebeccapurple;
+
+// }
 
 
 @media screen and (max-width:750px) {
@@ -97,19 +67,24 @@ color: rgb(139, 139, 139);
   .MatCard{
     width: 400px;
   }
-
+  .CloseButton{
+    padding-left: 70px;
+  }
+  
   .MatCard1{
     width: 400px;
   }
-
 }
-
 @media screen and (max-width:600px) {
   .MatCard{
     width: 200px;
+  
   }
-
+  .CloseButton{
+    padding-left: 0%;
+  }
   .MatCard1{
     width: 200px;
+    height: 130px;
   }
 }

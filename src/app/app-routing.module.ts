@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { ButtonsComponent } from './components/buttons/buttons.component';
 import { CreatenotesComponent } from './components/createnotes/createnotes.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -29,6 +31,14 @@ path: 'register', component: RegisterComponent
 },
 {
   path: 'createnotes', component:CreatenotesComponent,
+},
+
+{
+  path: 'getnotes', component:DisplayNotesComponent
+},
+{
+path: 'buttons', component:ButtonsComponent
+
 }
 ];
 

@@ -56,7 +56,7 @@ outline: none;
 
 .SlideBar{
   top: 10%;
-  width: 200px;
+  width: 250px;
 }
 
 
@@ -67,11 +67,11 @@ outline: none;
   background-color: rgba(128, 128, 128, 0.575);
 }
 
-.SlideBarOption {
-  border-radius: 1px;
+ .SlideBarOption {
+    border-radius: 1px;
   border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-}
+   border-bottom-right-radius: 25px;
+ }
 
 .SideBarIcon{
   display: flex;
@@ -82,10 +82,6 @@ outline: none;
 
 
 @media screen and (max-width:500px) {
-
-
-
-
 .Keep{
   padding-right: 5px;
 }

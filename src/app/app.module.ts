@@ -29,6 +29,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { CreatenotesComponent } from './components/createnotes/createnotes.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
+import { ButtonsComponent } from './components/buttons/buttons.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { DisplayNotesComponent } from './components/display-notes/display-notes.
     ResetpasswordComponent,
     DashboardComponent,
     CreatenotesComponent,
-    DisplayNotesComponent
+    DisplayNotesComponent,
+    ButtonsComponent
   ],
   imports: [
     MatSelectModule,

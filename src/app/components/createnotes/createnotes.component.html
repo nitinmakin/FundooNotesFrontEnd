@@ -1,42 +1,32 @@
-<!-- 
-<div style="display: flex; justify-content: center; margin-top: 100px;">
-
-  <form [formGroup]="form">
-    <inpt formControlName="description" matInput placeholder="description" required>
-<button (ut formControlName="title" matInput placeholder="title" required>
-    <inpuclick)="addNotes()">Add</button>
-  </form>
-</div> -->
-
 <div>
   <div fxLayout="row" fxLayoutAlign="space-around start">
-  <mat-card class="MatCard" (click)="reset=false" *ngIf="reset">Take a note...</mat-card>
-</div>
+    <mat-card class="MatCard" (click)="reset=false" *ngIf="reset">Take a note...</mat-card>
+  </div>
 
-<div>
-  <div fxLayout="coloum" fxLayoutAlign="space-around center">
-  <mat-card class="MatCard1" *ngIf="!reset">
+  <div>
+    <div fxLayout="coloum" fxLayoutAlign="space-around center">
+      <mat-card class="MatCard1" *ngIf="!reset">
+
+        <form [formGroup]="form">
+
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <input formControlName="title" matInput placeholder="Title" class="Title" required>
+            <button class="Buttons"><span class="material-icons">push_pin</span></button>
+          </div>
+          <input formControlName="description" matInput placeholder="Take a note" class="Title" required><br><br>
       
-    <form [formGroup]="form">
-      <input formControlName="title" matInput placeholder="Title" class="Title" required><br><br>
-      <input formControlName="description" matInput placeholder="Take a note" class="Title" required>
-    </form>
-    <div fxLayout="row" fxLayoutAlign="end end" >
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutAlign.xs="end end" >
+            <app-buttons></app-buttons>
+            <button (click)="addNotes()" (click)="reset=true" class="CloseButton">Close</button>
+          </div>
+          
+        </form>
 
-      <button (click)="addNotes()" (click)="reset=true" class="CloseButton">Close</button>
-
-
+      </mat-card>
     </div>
-  </mat-card>
-</div>
+  </div>
 
-
-
-
-
-</div>
-
-<!-- 
+  <!-- 
    <div fxLayout="row" fxLayoutAlign="space-around start">
     <mat-card class="MatCard1 form" *ngIf="!reset">
     <form [formGroup]="form">
