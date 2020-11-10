@@ -14,7 +14,7 @@ export class UserServiceService {
 
   Token_KEY = 'Token';
   anotherTodolist = [];
-  constructor(private httpService: HttpServiceService) {}
+  constructor(private httpService: HttpServiceService) { }
 
   setToken(token: string) {
     if (!token) {
@@ -48,12 +48,17 @@ export class UserServiceService {
     return this.httpService.post(`${this.baseUrl}Account/ForgetPassword`, user);
   }
 
-  resetPassword(data) {
-    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5pdGlubWFraW4xMjRAZ21haWwuY29tIiwiaWQiOiI1Zjk3NTBiZTEyNzk4OGZkZjdjZjI2MTciLCJleHAiOjE2MDQ5MTI5NjV9.v9mqyYHRTObagbs6As9Av36T80Bqe70r80Z6siLb7pY' }) }
-    return this.httpService.post(`${this.baseUrl}Account/ResetPassword/`, data, true,options)
+  resetPassword(data, token) {
+    let options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      })
+    }
+    return this.httpService.post(`${this.baseUrl}Account/ResetPassword/`, data, true, options)
   }
 
-  
+
 
   loggedIn() {
     return !!localStorage.getItem('Token')

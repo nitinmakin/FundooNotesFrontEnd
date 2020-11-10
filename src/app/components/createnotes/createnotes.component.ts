@@ -22,10 +22,10 @@ export class CreatenotesComponent implements OnInit {
   constructor(private fb: FormBuilder, private notes: NotesServiceService,
     public snakeBar: MatSnackBar) {
 
-    this.form = this.fb.group({
-      title: [""],
-      description: [""]
-    })
+      this.form = this.fb.group({
+        title: [""],
+        description: [""]
+      })
   }
 
   addNotes() {

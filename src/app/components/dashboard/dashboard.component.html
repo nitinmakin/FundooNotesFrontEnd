@@ -43,9 +43,11 @@
         </button>
       </div>
 
-      <div fxFlex="95%" fxLayoutAlign="center start">
+      <div fxFlex="95%" fxLayoutAlign="start center" fxLayout="column">
         <app-createnotes></app-createnotes>
+        <app-display-notes></app-display-notes>
       </div>
+
     </div>
   </mat-drawer-container>
 
@@ -59,17 +61,17 @@
 
       <div fxLayout="row" fxLayoutAlign="space-around center">
         <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">notifications</mat-icon>
-        <mat-list-option  class="SlideBarOption">Reminder</mat-list-option>
+        <mat-list-option class="SlideBarOption">Reminder</mat-list-option>
       </div>
 
       <div fxLayout="row" fxLayoutAlign="space-around center">
         <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">create</mat-icon>
-        <mat-list-option class="SlideBarOption">Edit lable</mat-list-option>      
+        <mat-list-option class="SlideBarOption">Edit lable</mat-list-option>
       </div>
 
       <div fxLayout="row" fxLayoutAlign="space-around center">
         <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">archive</mat-icon>
-        <mat-list-option class="SlideBarOption">Archive</mat-list-option>   
+        <mat-list-option class="SlideBarOption">Archive</mat-list-option>
       </div>
 
       <div fxLayout="row" fxLayoutAlign="space-around center">

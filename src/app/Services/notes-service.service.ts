@@ -19,7 +19,7 @@ export class NotesServiceService {
     return this.httpService.post(`${this.baseUrl}Notes`, data, true,options)
   }
 
-  displayNotes(){
+  getNotes(){
     let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer '+localStorage.getItem('Token') }) }
     return this.httpService.get(`${this.baseUrl}Notes`,true,options)
   }
