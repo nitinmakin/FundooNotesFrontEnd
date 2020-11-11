@@ -1,11 +1,17 @@
+$color:white;
 
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+}
 .Buttons{
     border: none;
-    background-color: white;
+    background-color:$color;
     outline: none;
-    color: rgb(59, 59, 59);
+    color: rgb(105, 103, 103);
     padding-right: 12px;
     padding-left: 0px;
+    @include flex;
   
   }
   @media screen and (max-width:600px) {

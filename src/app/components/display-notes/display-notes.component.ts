@@ -13,44 +13,26 @@ export class DisplayNotesComponent implements OnInit {
 
 
   reset = true;
-  reset1=false;
-  form: FormGroup;
+ 
 
-  constructor(private fb: FormBuilder, private notes: NotesServiceService,
-    public snakeBar: MatSnackBar) {
+  constructor( private notes: NotesServiceService,) {}
 
-      this.form = this.fb.group({
-        title: [""],
-        description: [""]
+  note = [];
+
+  displayNotes() {
+    this.notes.getNotes().subscribe((result: any) => {
+      this.note = result['data']
+      console.log(this.note)
+    },
+      (error) => {
+        console.log(error)
       })
-     }
-
-      note = [];
-
-     displayNotes(){
-     this.notes.getNotes().subscribe((result: any) => {
-     //  console.log(result)
-
-        for (let i = 0; i < result['data'].length; i++) {
-            this.note.push(result['data'][i]);  
-            console.log(this.note[i])
-          }
-       
-            
-          
-
-      },
-        (error) => { 
-          console.log(error)
-        })
-      
-     }
-
-
-    
-
+  }
 
   ngOnInit(): void {
+ 
+    this.displayNotes()
+
   }
 
 }

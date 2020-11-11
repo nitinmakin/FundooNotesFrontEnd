@@ -63,14 +63,12 @@ outline: none;
   .MatCard{
     width: 400px;
   }
-  .CloseButton{
-    padding-left: 70px;
-  }
+ 
   .MatCard1{
     width: 400px;
   }
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width:550px) {
   .MatCard{
     width: 200px;
   }

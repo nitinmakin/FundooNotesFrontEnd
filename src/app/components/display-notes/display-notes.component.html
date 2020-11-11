@@ -1,48 +1,47 @@
+<div  fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="10px">
+    <mat-card class="MatCard" *ngFor="let note of note">
+  
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            {{note.title}}
+        </div>
 
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            {{note.message}}
+        </div>
+          
+    </mat-card>
+</div>
 
+<!-- <div fxLayout="row" fxLayoutAlign="space-around start">
+    <mat-card class="MatCard1" (mouseleave)="reset=true" *ngIf="!reset && !reset1" (click)="reset1=true">
+        <form [formGroup]="form">
 
-    <div fxLayout="row" fxLayoutAlign="space-between start">
-        <mat-card class="MatCard" (mouseenter)="reset=false" *ngIf="reset">
-            <form [formGroup]="form">
-                <div fxLayout="row" fxLayoutAlign="space-between center">
-                    <input formControlName="title" placeholder="Notes" matInput class="Title" required>
-                </div>
-                <input formControlName="description" matInput class="Title" required><br><br><br>
-            </form>
-        </mat-card>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <input formControlName="title" matInput class="Title" required>
+                <button class="Buttons"><span class="material-icons">push_pin</span></button>
+            </div>
+            <input formControlName="description" matInput class="Title" required><br fxHide.xs><br fxHide.xs><br
+                fxHide.xs>
+            <app-buttons></app-buttons>
 
-    </div>
+        </form>
+    </mat-card>
+</div> -->
 
-    <div fxLayout="row" fxLayoutAlign="space-around start">
-        <mat-card class="MatCard1" (mouseleave)="reset=true" *ngIf="!reset && !reset1" (click)="reset1=true">
-            <form [formGroup]="form">
+<!-- <div fxLayout="coloum" fxLayoutAlign="space-around center">
+    <mat-card class="MatCard1new" *ngIf="reset1" (click)="displayNotes()">
+        <form [formGroup]="form">
 
-                <div fxLayout="row" fxLayoutAlign="space-between center">
-                    <input formControlName="title" matInput class="Title" required>
-                    <button class="Buttons"><span class="material-icons">push_pin</span></button>
-                </div>
-                <input formControlName="description" matInput class="Title" required><br fxHide.xs><br fxHide.xs><br
-                    fxHide.xs>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <input formControlName="title" matInput class="Title">
+                <button class="Buttons"><span class="material-icons">push_pin</span></button>
+            </div>
+            <input formControlName="description" class="Title" required><br><br>
+
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutAlign.xs="end end">
                 <app-buttons></app-buttons>
-
-            </form>
-        </mat-card>
-    </div>
-
-    <div fxLayout="coloum" fxLayoutAlign="space-around center">
-        <mat-card class="MatCard1new" *ngIf="reset1" (click)="displayNotes()">
-            <form [formGroup]="form">
-
-                <div fxLayout="row" fxLayoutAlign="space-between center">
-                    <input formControlName="title" matInput class="Title">
-                    <button class="Buttons"><span class="material-icons" (click)="displayNotes()">push_pin</span></button>
-                </div>
-                <input formControlName="description" class="Title" required><br><br>
-
-                <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutAlign.xs="end end">
-                    <app-buttons></app-buttons>
-                    <button (click)="reset1=false" class="CloseButton">Close</button>
-                </div>
-            </form>
-        </mat-card>
-    </div>
+                <button (click)="reset1=false" class="CloseButton">Close</button>
+            </div>
+        </form>
+    </mat-card>
+</div> -->
