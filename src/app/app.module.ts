@@ -30,6 +30,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { CreatenotesComponent } from './components/createnotes/createnotes.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
+import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -42,7 +45,8 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
     DashboardComponent,
     CreatenotesComponent,
     DisplayNotesComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    UpdateNotesComponent
   ],
   imports: [
     MatSelectModule,
@@ -51,6 +55,7 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
     MatListModule,
     MatCardModule,
     MatExpansionModule,
+    MatDialogModule,
     MatSidenavModule,
     MatToolbarModule,
     BrowserModule,

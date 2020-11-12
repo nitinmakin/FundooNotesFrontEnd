@@ -56,29 +56,34 @@
   <mat-drawer #drawer class="SlideBar" mode="side" (mouseleave)="drawer.toggle()" (mouseleave)="changeVisiblity()">
     <mat-selection-list [multiple]="false">
 
-      <div fxLayout="row" fxLayoutAlign="space-around center">
-        <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">emoji_objects</mat-icon>
-        <mat-list-option class="SlideBarOption">Notes</mat-list-option>
+      <div fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption">
+      
+      
+       
+        <!-- <mat-list-option class="SlideBarOption"> -->
+          <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">emoji_objects</mat-icon>
+          Notes
+        <!-- </mat-list-option> -->
       </div>
 
-      <div fxLayout="row" fxLayoutAlign="space-around center">
+      <div fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption">
         <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">notifications</mat-icon>
-        <mat-list-option class="SlideBarOption">Reminder</mat-list-option>
+        Reminder
       </div>
 
-      <div fxLayout="row" fxLayoutAlign="space-around center">
+      <div fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption">
         <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">create</mat-icon>
-        <mat-list-option class="SlideBarOption">Edit lable</mat-list-option>
+        Edit lable
       </div>
 
-      <div fxLayout="row" fxLayoutAlign="space-around center">
+      <div fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption"> 
         <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">archive</mat-icon>
-        <mat-list-option class="SlideBarOption">Archive</mat-list-option>
+        Archive
       </div>
 
-      <div fxLayout="row" fxLayoutAlign="space-around center">
+      <div fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption">
         <mat-icon (mouseenter)="drawer.toggle()" class="material-icons-outlined">delete</mat-icon>
-        <mat-list-option class="SlideBarOption">Bin</mat-list-option>
+        Bin
       </div>
     </mat-selection-list>
   </mat-drawer>

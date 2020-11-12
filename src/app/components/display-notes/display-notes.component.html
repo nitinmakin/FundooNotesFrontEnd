@@ -1,16 +1,27 @@
 <div  fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="10px">
-    <mat-card class="MatCard" *ngFor="let note of note">
+    <mat-card class="MatCard" *ngFor="let note of note;let i = index" (click)="openDialog()" (mouseenter)="onHover(i)" (mouseleave)="onHover(-1)" >
   
-        <div fxLayout="row" fxLayoutAlign="space-between center">
+        
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="Title">
             {{note.title}}
         </div>
 
-        <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="Title1">
             {{note.message}}
-        </div>
-          
+        </div><br><br fxHide.xs><br fxHide.xs>
+        <span class="Buttons" [hidden]="!(hoverIndex==i)">
+        <app-buttons></app-buttons>
+        </span>
     </mat-card>
 </div>
+
+
+
+
+
+
+
+
 
 <!-- <div fxLayout="row" fxLayoutAlign="space-around start">
     <mat-card class="MatCard1" (mouseleave)="reset=true" *ngIf="!reset && !reset1" (click)="reset1=true">

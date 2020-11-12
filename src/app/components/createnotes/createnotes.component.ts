@@ -27,7 +27,16 @@ export class CreatenotesComponent implements OnInit {
         description: [""]
       })
   }
-
+  note = [];
+  displayNotes() {
+    this.notes.getNotes().subscribe((result: any) => {
+      this.note = result['data']
+      console.log(this.note)
+    },
+      (error) => {
+        console.log(error)
+      })
+  }
   addNotes() {
     let noteData = {
       "Title": this.form.controls.title.value,
@@ -53,6 +62,7 @@ export class CreatenotesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   // this.displayNotes()
   }
 
 }

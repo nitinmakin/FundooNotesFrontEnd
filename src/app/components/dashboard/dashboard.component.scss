@@ -65,13 +65,32 @@ outline: none;
  }
 .mat-list-option:hover {
   background-color: rgba(128, 128, 128, 0.575);
+ 
 }
 
- .SlideBarOption {
-    border-radius: 1px;
-  border-top-right-radius: 25px;
-   border-bottom-right-radius: 25px;
- }
+.SlideBarOption {
+  border-radius: 1px;
+border-top-right-radius: 25px;
+ border-bottom-right-radius: 25px;
+ background-color: white;
+ height: 50px;
+ outline: none;
+gap: 15px;
+
+ 
+}
+
+
+
+.SlideBarOption:hover {
+  border-radius: 1px;
+border-top-right-radius: 25px;
+ border-bottom-right-radius: 25px;
+ background-color: rgba(128, 128, 128, 0.575);
+ height: 50px;
+ outline: none;
+// padding-right: 150px;
+}
 
 .SideBarIcon{
   display: flex;

@@ -10,14 +10,14 @@
         <form [formGroup]="form">
 
           <div fxLayout="row" fxLayoutAlign="space-between center">
-            <input formControlName="title" matInput placeholder="Title" class="Title" required>
+            <input formControlName="title" matInput placeholder="Title" class="Title Title1" required>
             <button class="Buttons"><span class="material-icons">push_pin</span></button>
           </div>
           <input formControlName="description" matInput placeholder="Take a note" class="Title" required><br><br>
       
           <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutAlign.xs="end end" >
             <app-buttons></app-buttons>
-            <button (click)="addNotes()" (click)="reset=true" class="CloseButton">Close</button>
+            <button (click)="addNotes()"  (click)="displayNotes()" (click)="reset=true" class="CloseButton">Close</button>
           </div>
           
         </form>

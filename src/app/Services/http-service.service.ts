@@ -16,4 +16,8 @@ export class HttpServiceService {
     get(url,isHeaderRequired=false, header=null){
       return this.httpClient.get(url,isHeaderRequired && header)
       }
+
+      put(url, user, isHeaderRequired=false, header=null){
+        return this.httpClient.put(url,user,isHeaderRequired && header)
+        }
 }

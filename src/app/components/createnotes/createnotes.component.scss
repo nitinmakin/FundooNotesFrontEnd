@@ -49,10 +49,16 @@ outline: none;
   color: rgb(94, 94, 94);
 }
 .Title{
-  width: auto;
+  width: 400px;
   height: 30px;
   border: none;
   outline: none;
+  font-weight: bold;
+}
+
+.Title1{
+  font-size: large;
+  font-weight: bold;
 }
 // .ButtonsMargin{
 //   width: 700px;
@@ -67,10 +73,16 @@ outline: none;
   .MatCard1{
     width: 400px;
   }
+  .CloseButton{
+    padding-left: 100px;
+  }
 }
-@media screen and (max-width:550px) {
+@media screen and (max-width:600px) {
   .MatCard{
-    width: 200px;
+    width: 230px;
+  }
+  .Title{
+    width: 150px;
   }
   .CloseButton{
     padding-left: 0%;

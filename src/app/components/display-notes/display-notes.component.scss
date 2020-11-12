@@ -1,18 +1,39 @@
 .MatCard{
-    margin-top: 30px;
+  margin-top: 30px;
+  margin-left: 4%;
+  margin-right: 2%;
+   width: 220px;
+   height: 130px auto;
+   border-radius: 8px;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+  // font-size: xx-large;
+}
+
+.Title{
+  font-weight: bold;
+  font-size: large;
+  padding-bottom: 10px;
+  color: rgb(82, 82, 82);
+}
+.Title1{
+  display: flex;
+  flex-wrap: wrap;
+}
+.MatCard:hover{
+  margin-top: 30px;
    margin-left: 4%;
    margin-right: 2%;
     width: 220px;
-    height: 120px;
+    height: 140px auto;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.Row{
-  display: flex;
-  flex-direction: row;
-}
+
 .MatCard1{
     margin-top: 30px;
     margin-right: 600px;
@@ -22,12 +43,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.Title{
-    width: auto;
-    height: 30px;
-    border: none;
-    outline: none;
-  }
+
 .Buttons{
     border: none;
     background-color: white;
@@ -38,49 +54,33 @@
   }
 
 
-  @media screen and (max-width:1000px) {
 
-    // .MatCard{
-    //     margin-right: 400px;
 
-    // }
+ 
 
-    .MatCard1{
-        margin-right: 400px;
-    }
-
-  }
-
-  @media screen and (max-width:750px) {
-
-    // .MatCard{
-    //     margin-right: 0%;
-    //      width: 300px;
-    //      height: 110px;
-
-    // }
-
-    .MatCard1{
-        margin-right: 0%;
-        width: 300px;
-        height: 120px;
-    }
-  }
-
-  @media screen and (max-width:550px) {
+  @media screen and (max-width:600px) {
     .Buttons{
 padding-right: 4px;
+
 }
 
 .MatCard{
     margin-left: 12%;
-     width: 250px;
-     height: 80px;
+     width: 300px;
+     height: 80px auto;
+  
 }
 
-.MatCard1{
-    margin-right: 0%;
-    width: 200px;
-    height: 80px;
+  }
+  @media screen and (max-width:430px) {
+    .Buttons{
+padding-right: 4px;
+
+}
+
+.MatCard{
+    margin-left: 12%;
+     width: 230px;
+     height: 80px auto;
 }
   }
