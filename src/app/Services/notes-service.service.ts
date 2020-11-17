@@ -26,8 +26,14 @@ export class NotesServiceService {
   
   updateNotes(data){
     let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer '+localStorage.getItem('Token') }) }
-    return this.httpService.put(`${this.baseUrl}Notes/5fac4475834f711d0be94e91`,data,true,options)
+    return this.httpService.put(`${this.baseUrl}Notes/${data.id}`,data,true,options)
   }
+
+  deleteNotes(data){
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer '+localStorage.getItem('Token') }) }
+    return this.httpService.delete(`${this.baseUrl}Notes/${data.id}`,true,options)
+  }
+
 }
 
 

@@ -1,14 +1,12 @@
-<form [formGroup]="form">
+
 
     <div fxLayout="row" fxLayoutAlign="space-between center" >
-        <input formControlName="title" matInput placeholder="Title" class="Title Title1" required>
+        <input  matInput placeholder="Title" id="test1" value="{{data.title}}" class="Title Title1" required>
         <button class="Buttons"><span class="material-icons">push_pin</span></button>
     </div>
-    <input formControlName="description" matInput placeholder="Take a note" class="Title" required><br><br>
+    <input id="test2" matInput placeholder="Take a note" value="{{data.message}}" class="Title" required><br><br>
 
     <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutAlign.xs="end end">
         <app-buttons></app-buttons>
         <button class="CloseButton" (click)="updateNotes()">Close</button>
     </div>
-
-</form>

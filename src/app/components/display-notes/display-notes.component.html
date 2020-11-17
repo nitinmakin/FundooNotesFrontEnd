@@ -1,16 +1,19 @@
-<div  fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="10px">
-    <mat-card class="MatCard" *ngFor="let note of note;let i = index" (click)="openDialog()" (mouseenter)="onHover(i)" (mouseleave)="onHover(-1)" >
-  
-        
-        <div fxLayout="row" fxLayoutAlign="space-between center" class="Title">
-            {{note.title}}
-        </div>
+<div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="10px" class="Margin">
+    <mat-card class="MatCard" *ngFor="let note of note;let i = index" (mouseenter)="onHover(i)" (mouseleave)="onHover(-1)" [style.background]="note.color">
 
-        <div fxLayout="row" fxLayoutAlign="space-between center" class="Title1">
-            {{note.message}}
-        </div><br><br fxHide.xs><br fxHide.xs>
-        <span class="Buttons" [hidden]="!(hoverIndex==i)">
-        <app-buttons></app-buttons>
+        <div (click)="openDialog(note.title,note.message,note.id)">
+
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="Title">
+                {{note.title}}
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="Title1">
+                {{note.message}}
+            </div><br><br fxHide.xs><br fxHide.xs>
+
+        </div>
+        <span class="Buttons" [hidden]="!(hoverIndex==i)"  >
+           <app-delete-notes [noteArray]="note"></app-delete-notes>
         </span>
     </mat-card>
 </div>

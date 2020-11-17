@@ -4,6 +4,7 @@ import { AuthGuard } from './auth.guard';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { CreatenotesComponent } from './components/createnotes/createnotes.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DeleteNotesComponent } from './components/delete-notes/delete-notes.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { LoginComponent } from './components/login/login.component';
@@ -41,8 +42,13 @@ path: 'register', component: RegisterComponent
 path: 'buttons', component:ButtonsComponent
 
 },
+
 {
 path: 'update', component:UpdateNotesComponent
+},
+
+{
+  path:'delete', component:DeleteNotesComponent
 }
 ];
 

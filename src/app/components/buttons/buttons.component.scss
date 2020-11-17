@@ -12,8 +12,25 @@ $color:white;
     padding-right: 12px;
     padding-left: 0px;
     @include flex;
-  
   }
+
+  .Buttons1{
+  background-color:$color;
+  @include flex;
+  width: 100% auto;
+  outline: none;
+  border: none;
+  font-size: medium;
+  font: outline;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 5%;
+ 
+}
+
+.Buttons1:hover{
+background-color: rgb(156, 156, 156)
+}
+
   @media screen and (max-width:600px) {
 .Buttons{
 padding-right: 4px;

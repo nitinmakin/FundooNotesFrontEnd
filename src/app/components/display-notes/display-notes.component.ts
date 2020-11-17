@@ -3,17 +3,16 @@ import { NotesServiceService } from '../../Services/notes-service.service';
 import {MatDialog} from '@angular/material/dialog';
 import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 
-
 @Component({
   selector: 'app-display-notes',
   templateUrl: './display-notes.component.html',
   styleUrls: ['./display-notes.component.scss']
 })
+
 export class DisplayNotesComponent implements OnInit {
   reset = true;
   hoverIndex = -1;
- // active: boolean;
-  
+
   onHover(i) {
     this.hoverIndex = i
   }
@@ -31,14 +30,13 @@ export class DisplayNotesComponent implements OnInit {
       })
   }
 
-  openDialog() {
-    this.dialog.open(UpdateNotesComponent);
+  openDialog(title, message, id) {
+    this.dialog.open(UpdateNotesComponent, { data: { title: title, message: message, id: id } });
+    console.log(id);
   }
 
   ngOnInit(): void {
- 
     this.displayNotes()
-
   }
 
 }

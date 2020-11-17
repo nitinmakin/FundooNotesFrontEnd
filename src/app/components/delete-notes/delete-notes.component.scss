@@ -1,0 +1,108 @@
+$color:white;
+@import '../../../style/style.scss';
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+}
+.Buttons{
+    border: none;
+    background-color:none;
+    outline: none;
+    color: rgb(105, 103, 103);
+    // padding-right: 12px;
+    // padding-left: 0px;
+    // @include flex;
+  }
+  .newButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .Buttons1{
+  background-color:$color;
+  @include flex;
+  width: 100% auto;
+  outline: none;
+  border: none;
+  font-size: medium;
+  font: outline;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 5%;
+ 
+}
+
+
+@mixin color {
+    width: 25px;
+    height: 25px;
+    margin: 3px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid $borderColor;
+  }
+  .color-one {
+    @include color();
+    background-color: $white;
+  }
+  .color-two {
+    @include color();
+    background-color: $palletRed;
+  }
+  .color-three {
+    @include color();
+    background-color: $palletOrange;
+  }
+  .color-four {
+    @include color();
+    background-color: $palletYellow;
+  }
+  .color-five {
+    @include color();
+    background-color: $palletGreen;
+  }
+  .color-six {
+    @include color();
+    background-color: $palletCan;
+  }
+  .color-seven {
+    @include color();
+    background-color: $palletLightBlue;
+  }
+  .color-eight {
+    @include color();
+    background-color: $palletBlue;
+  }
+  .color-nine {
+    @include color();
+    background-color: $palletPurpl;
+  }
+  .color-ten {
+    @include color();
+    background-color: $palletPink;
+  }
+  .color-eleven {
+    @include color();
+    background-color: $palletLightOrange;
+  }
+  .color-twelve {
+    @include color();
+    background-color: $palletFaint;
+  }
+  
+  .mat-icon {
+    font-size: 18px;
+  }
+  .pallet {
+    padding: 5px;
+  }
+
+.Buttons1:hover{
+background-color: rgb(156, 156, 156)
+}
+
+  @media screen and (max-width:600px) {
+.Buttons{
+padding-right: 4px;
+}
+  }

@@ -1,34 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validator } from '@angular/forms';
+import { Component, OnInit, Inject } from '@angular/core';
 import { NotesServiceService } from '../../Services/notes-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-update-notes',
   templateUrl: './update-notes.component.html',
   styleUrls: ['./update-notes.component.scss']
 })
+
 export class UpdateNotesComponent implements OnInit {
-
-  form: FormGroup;
-  Display=true;
-  constructor(private fb: FormBuilder, private notes: NotesServiceService,
-    public snakeBar: MatSnackBar) {
-
-
-      this.form = this.fb.group({
-        title: [""],
-        description: [""]
-      })
-
-     }
+  constructor(@Inject(MAT_DIALOG_DATA)public data:any, private notes: NotesServiceService,
+    public snakeBar: MatSnackBar) {}
      updateNotes() {
       let noteData = {
-        "Title": this.form.controls.title.value,
-        "Message": this.form.controls.description.value,
+        "Title": (<HTMLInputElement>document.getElementById('test1')).value,
+        "Message": (<HTMLInputElement>document.getElementById('test2')).value,
+        "id": this.data.id  ,
+        "color":'#fbbc04'
       }
-
-      if (this.form.valid) {
         this.notes.updateNotes(noteData).subscribe((result: any) => {
           this.snakeBar.open("Note updated Successfully", 'cancel')
           setTimeout(() => {
@@ -44,8 +34,6 @@ export class UpdateNotesComponent implements OnInit {
             console.log(error)
           })
       }
-    }
-
 
   ngOnInit(): void {
   }
