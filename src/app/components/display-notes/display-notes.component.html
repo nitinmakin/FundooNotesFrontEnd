@@ -12,11 +12,24 @@
             </div><br><br fxHide.xs><br fxHide.xs>
 
         </div>
-        <span class="Buttons" [hidden]="!(hoverIndex==i)"  >
-           <app-delete-notes [noteArray]="note"></app-delete-notes>
+        <span [hidden]="!(hoverIndex==i)"  >
+           <app-delete-notes [noteArray]="note"  (change)="receiveMessage($event)"></app-delete-notes>
         </span>
     </mat-card>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

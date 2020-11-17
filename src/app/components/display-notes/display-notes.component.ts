@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild, AfterViewInit } from '@angular/core';
 import { NotesServiceService } from '../../Services/notes-service.service';
 import {MatDialog} from '@angular/material/dialog';
 import { UpdateNotesComponent } from '../update-notes/update-notes.component';
+import { CreatenotesComponent } from '../createnotes/createnotes.component';
+import { DataServiceService } from "../../Services/data-service.service";
 
 @Component({
   selector: 'app-display-notes',
@@ -17,7 +19,14 @@ export class DisplayNotesComponent implements OnInit {
     this.hoverIndex = i
   }
 
-  constructor( private notes: NotesServiceService, public dialog: MatDialog) {}
+  message:any;
+  receiveMessage($event) {
+    this.message = $event
+    this.displayNotes();
+  
+  }
+
+  constructor( private notes: NotesServiceService, public dialog: MatDialog, private data: DataServiceService) {}
   note = [];
   displayNotes() {
     this.notes.getNotes().subscribe((result: any) => {
@@ -34,9 +43,11 @@ export class DisplayNotesComponent implements OnInit {
     this.dialog.open(UpdateNotesComponent, { data: { title: title, message: message, id: id } });
     console.log(id);
   }
-
+  
+  message1:any;
   ngOnInit(): void {
     this.displayNotes()
-  }
+    this.data.currentMessage.subscribe(data=>{ this.displayNotes()});
 
+  }
 }

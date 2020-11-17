@@ -1,7 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="space-around center">
-<span class="material-icons">add_alert</span>
-<span class="material-icons">person_add_alt_1</span>
-
+    <span class="material-icons">add_alert</span>
+    <span class="material-icons">person_add_alt_1</span>
 
     <span class="material-icons">archive</span>
     <button mat-icon-button [matMenuTriggerFor]="menu1">
@@ -33,7 +32,7 @@
 
 
     <span class="material-icons">photo</span>
-    <span class="material-icons"  [matMenuTriggerFor]="menu">more_vert</span>
+    <span class="material-icons" [matMenuTriggerFor]="menu">more_vert</span>
 
     <mat-menu #menu="matMenu">
         <button class="Buttons1" (click)="deleteNotes()">Delete note</button>
@@ -45,45 +44,3 @@
 
 
 </div>
-
-<!--  
- <div class="newButton">
-    <span class="material-icons">add_alert</span>
-    <span class="material-icons">person_add_alt_1</span>
-    <span class="material-icons">archive</span>
- <button mat-icon-button [matMenuTriggerFor]="menu1" style="display: flex; flex-direction: row;">
-    <mat-icon class="material-icons-outlined" >color_lens</mat-icon></button>
- <mat-menu #menu1="matMenu" fxLayout="row">
-    <div fxLayoutAlign="space-around center" class="pallet">
-        <div class="color-one" (click)="getColor('#fff')">
-            <mat-icon>done</mat-icon>
-        </div>
-        <div class="color-two" (click)="getColor('#f28b82')"></div>
-        <div class="color-three" (click)="getColor('#fbbc04')"></div>
-        <div class="color-four" (click)="getColor('#fff475')"></div>
-    </div>
-    <div fxLayoutAlign="space-around center" class="pallet">
-        <div class="color-five" (click)="getColor('#ccff90')"></div>
-        <div class="color-six" (click)="getColor('#a7ffeb')"></div>
-        <div class="color-seven" (click)="getColor('#cbf0f8')"></div>
-        <div class="color-eight" (click)="getColor('#aecbfa')"></div>
-    </div>
-
-    <div fxLayoutAlign="space-around center" class="pallet">
-        <div class="color-nine" (click)="getColor('#d7aefb')"></div>
-        <div class="color-ten" (click)="getColor('#fdcfe8')"></div>
-        <div class="color-eleven" (click)="getColor('#e6c9a8')"></div>
-        <div class="color-twelve" (click)="getColor('#e8eaed')"></div>
-    </div>
-</mat-menu> 
-<span class="material-icons" style="display: flex; flex-direction: row;">photo</span>
-<button class="Buttons" [matMenuTriggerFor]="menu"><span class="material-icons">more_vert</span></button>
- 
-<mat-menu  #menu="matMenu" >
-   <button class="Buttons1" (click)="deleteNotes()">Delete note</button>
-   <button class="Buttons1">Add lable</button>
-   <button class="Buttons1">Add drowing</button>
-   <button class="Buttons1" >Make a copy</button>
-
- </mat-menu>
-</div> -->
