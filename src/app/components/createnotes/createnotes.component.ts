@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validator } from '@angular/forms';
 import { NotesServiceService } from '../../Services/notes-service.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataServiceService } from "../../Services/data-service.service";
+import { UtilityServiceService } from "../../Services/utility-service.service";
 
 @Component({
   selector: 'app-createnotes',
@@ -13,10 +13,9 @@ import { DataServiceService } from "../../Services/data-service.service";
 export class CreatenotesComponent implements OnInit {
   reset = true
   form: FormGroup;
-  //@Output() change = new EventEmitter<any>();
 
   constructor(private fb: FormBuilder, private notes: NotesServiceService,
-    public snakeBar: MatSnackBar, private data: DataServiceService) {
+    public snakeBar: UtilityServiceService, private data: DataServiceService) {
 
       this.form = this.fb.group({
         title: [""],
@@ -31,32 +30,19 @@ export class CreatenotesComponent implements OnInit {
     }
     if (this.form.valid) {
       this.notes.addNotes(noteData).subscribe((result: any) => {
-        this.snakeBar.open("Note added Successfully", 'cancel')
+        this.snakeBar.snakeBarMethod("Note added Successfully")
         this.data.changeMessage({});
        
-        setTimeout(() => {
-          this.snakeBar.dismiss();
-        }, 5000)
-        console.log(result)
+      
       },
         (error) => {
-          this.snakeBar.open("OOPS..somethimg went wrong...", 'cancel')
-          setTimeout(() => {
-            this.snakeBar.dismiss();
-          }, 5000)
-          console.log(error)
+          this.snakeBar.snakeBarMethod("OOPS..somethimg went wrong...")
         })
     }
   }
 
-
- // message:String
   ngOnInit(): void {
-  // this.data.currentMessage.subscribe(message => this.message = message)
+ 
   }
-
-  // newMessage() {
-  //   this.data.changeMessage(this.addNotes())
-  // }
 
 }

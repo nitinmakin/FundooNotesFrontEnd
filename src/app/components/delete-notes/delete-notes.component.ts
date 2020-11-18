@@ -1,7 +1,7 @@
 import { Component, OnInit,Inject, Input,Output,EventEmitter } from '@angular/core';
 import { NotesServiceService } from '../../Services/notes-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { UtilityServiceService } from "../../Services/utility-service.service";
 
 @Component({
   selector: 'app-delete-notes',
@@ -10,9 +10,9 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class DeleteNotesComponent implements OnInit  {
 
-  constructor(private note:NotesServiceService, public snakeBar:MatSnackBar) { }
+  constructor(private note:NotesServiceService, public snakeBar:UtilityServiceService) { }
    @Input() noteArray
-   @Output() change = new EventEmitter<any>();
+   @Output() operation = new EventEmitter<any>();
 
    getColor(color) {
     let noteColorData = {
@@ -24,7 +24,7 @@ export class DeleteNotesComponent implements OnInit  {
 
     console.log(this.noteArray)
     this.note.updateNotes(noteColorData).subscribe(response => {
-      this.change.emit();
+      this.operation.emit();
       console.log(response)
     },
       error => {
@@ -38,19 +38,15 @@ export class DeleteNotesComponent implements OnInit  {
   "id":[this.noteArray.id]
 } 
  this.note.deleteNotes(data).subscribe((result: any) => {
-  this.snakeBar.open("Note deleted Successfully", 'cancel')
-  this.change.emit();
-  setTimeout(() => {
-    this.snakeBar.dismiss();
-  }, 5000)
-  console.log(result)
+
+
+  
+  this.snakeBar.snakeBarMethod("Note deleted Successfully")
+  this.operation.emit();
+ 
 },
   (error) => {
-    this.snakeBar.open("OOPS..somethimg went wrong...", 'cancel')
-    setTimeout(() => {
-      this.snakeBar.dismiss();
-    }, 5000)
-    console.log(error)
+    this.snakeBar.snakeBarMethod("OOPS..somethimg went wrong...")
   })
  }
 

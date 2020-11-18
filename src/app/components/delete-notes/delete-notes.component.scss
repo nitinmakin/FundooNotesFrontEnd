@@ -5,13 +5,8 @@ $color:white;
     flex-direction: column;
 }
 .Buttons{
-    border: none;
-    background-color:none;
-    outline: none;
-    color: rgb(105, 103, 103);
-    // padding-right: 12px;
-    // padding-left: 0px;
-    // @include flex;
+   padding-left: 5%;
+   padding-right: 0%;
   }
   .newButton{
     display: flex;
@@ -28,10 +23,9 @@ $color:white;
   font-size: medium;
   font: outline;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  margin-top: 5%;
+   margin-top: 5%;
  
 }
-
 
 @mixin color {
     width: 25px;
@@ -103,6 +97,6 @@ background-color: rgb(156, 156, 156)
 
   @media screen and (max-width:600px) {
 .Buttons{
-padding-right: 4px;
+padding-left: 0%;
 }
   }

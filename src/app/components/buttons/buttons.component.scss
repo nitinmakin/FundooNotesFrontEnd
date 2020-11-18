@@ -5,14 +5,14 @@ $color:white;
     flex-direction: column;
 }
 .Buttons{
-    border: none;
-    background-color:$color;
-    outline: none;
-    color: rgb(105, 103, 103);
-    padding-right: 12px;
-    padding-left: 0px;
-    @include flex;
-  }
+  border: none;
+  background-color:$color;
+  outline: none;
+  color: rgb(105, 103, 103);
+  padding-right: 12px;
+  padding-left: 0px;
+  @include flex;
+}
 
   .Buttons1{
   background-color:$color;

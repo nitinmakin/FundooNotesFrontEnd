@@ -2,17 +2,22 @@
   margin-top: 30px;
  
    width: 220px;
-   height: 130px auto;
+  // height: 130px auto;
    border-radius: 8px;
    display: flex;
    flex-direction: column;
    flex-wrap: wrap;
+   height: 140px;
   // font-size: xx-large;
+  margin-left: 10px;
+  box-shadow: none;
+  border: 0.5px solid rgb(225, 224, 224);
 }
 
 .Margin{
   margin-left: 5%;
   margin-right: 2%;
+ min-height: 120px;
 }
 
 .Title{
@@ -28,7 +33,7 @@
 .MatCard:hover{
     margin-top: 30px;
     width: 220px;
-    height: 130px auto;
+   min-height: 140px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -63,7 +68,7 @@ padding-right: 4px;
 .MatCard{
     margin-left: 12%;
      width: 300px;
-     height: 80px auto;
+     height: 80px ;
 }
 
   }
@@ -76,6 +81,6 @@ padding-right: 4px;
 .MatCard{
     margin-left: 12%;
      width: 230px;
-     height: 80px auto;
+     height: 80px 
 }
   }

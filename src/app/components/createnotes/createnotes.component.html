@@ -16,7 +16,9 @@
           <input formControlName="description" matInput placeholder="Take a note" class="Title" required><br><br>
       
           <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutAlign.xs="end end" >
-            <app-buttons></app-buttons>
+            <!-- <app-buttons></app-buttons> -->
+
+            <app-delete-notes></app-delete-notes>
             <button (click)="addNotes()" (click)="reset=true" class="CloseButton">Close</button>
           </div>
           
@@ -26,12 +28,4 @@
     </div>
   </div>
 
-  <!-- 
-   <div fxLayout="row" fxLayoutAlign="space-around start">
-    <mat-card class="MatCard1 form" *ngIf="!reset">
-    <form [formGroup]="form">
-      <input formControlName="title" matInput placeholder="title" required>
-      <input formControlName="description" matInput placeholder="description" required>
-    </form>
-  </mat-card>
-</div> -->
+ 

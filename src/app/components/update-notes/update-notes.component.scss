@@ -4,7 +4,8 @@
     font-size: larger;
     font-weight: bold;
     color: rgb(139, 139, 139);
-    padding-left: 310px;
+    padding-left: 300px;
+    margin-left: 70px;
     outline: none;
     }
     
@@ -29,3 +30,19 @@
     font-weight: bold;
   }
 
+  @media screen and (max-width:600px) {
+
+.Responsive{
+  width: 260px;
+ 
+}
+
+.Title{
+  width: 150px;
+}
+
+.CloseButton{
+  padding-left: 10px;
+}
+
+  }

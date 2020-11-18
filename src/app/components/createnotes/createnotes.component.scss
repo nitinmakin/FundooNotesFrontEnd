@@ -9,7 +9,7 @@ width: 100%;
   margin-top: 30px;
   background-color:rgb(255, 253, 253);
   font-weight: bold;
-  color: rgb(153, 152, 152);
+  color: rgb(111, 110, 110);
   border: none;
   outline: none;
  box-shadow: blue;
@@ -23,7 +23,7 @@ width: 100%;
   margin-top: 30px;
   background-color:rgb(255, 254, 254);
   font-weight: bold;
- color: rgb(179, 179, 179);
+ color: rgb(102, 102, 102);
   border: none;
   outline: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -38,7 +38,8 @@ border: none;
 font-size: larger;
 font-weight: bold;
 color: rgb(139, 139, 139);
-padding-left: 310px;
+padding-left: 300px;
+margin-left: 70px;
 outline: none;
 }
 
@@ -79,16 +80,40 @@ outline: none;
 }
 @media screen and (max-width:600px) {
   .MatCard{
-    width: 230px;
+    width: 300px;
+  //  margin-left: 10px;
   }
   .Title{
     width: 150px;
   }
   .CloseButton{
     padding-left: 0%;
+    margin-left: 0%;
   }
   .MatCard1{
-    width: 200px;
+    width: 300px;
     height: 130px;
+   // margin-left: 20px;
+   
+  }
+}
+
+@media screen and (max-width:450px) {
+  .MatCard{
+    width: 230px;
+ //   margin-left: 20px;
+  }
+  .Title{
+    width: 150px;
+  }
+  .CloseButton{
+    padding-left: 0%;
+    margin-left: 0%;
+  }
+  .MatCard1{
+    width: 230px;
+    height: 130px;
+    margin-left: 20px;
+   
   }
 }

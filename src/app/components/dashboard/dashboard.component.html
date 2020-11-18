@@ -7,9 +7,11 @@
 
 
     <img src="../../../assets/icons8-google-keep-48.png">
-    <h2 class="Keep">Notes</h2>
-    <input type="search" placeholder="Search" class="SearchBar">
-
+    <h2 class="Keep">Fundoo</h2>
+  <div fxHide.gt-xs>  <span class="material-icons" >search</span></div>
+      <input type="search" placeholder="Search" fxHide.xs class="SearchBar">
+     
+   
     <button mat-button [matMenuTriggerFor]="beforeMenu" class="Menu1">
       <mat-icon class="material-icons-outlined">account_circle</mat-icon>
     </button>
@@ -20,7 +22,6 @@
       <button type="submit" (click)="logout()" class="LogoutButton">Log Out</button>
     </mat-menu>
   </div>
-
 
 
   <mat-drawer-container class="BodyContainer">

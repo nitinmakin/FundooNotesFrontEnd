@@ -1,5 +1,6 @@
 
 
+<div class="Responsive">
     <div fxLayout="row" fxLayoutAlign="space-between center" >
         <input  matInput placeholder="Title" id="test1" value="{{data.title}}" class="Title Title1" required>
         <button class="Buttons"><span class="material-icons">push_pin</span></button>
@@ -7,6 +8,7 @@
     <input id="test2" matInput placeholder="Take a note" value="{{data.message}}" class="Title" required><br><br>
 
     <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutAlign.xs="end end">
-        <app-buttons></app-buttons>
-        <button class="CloseButton" (click)="updateNotes()">Close</button>
+        <app-delete-notes></app-delete-notes>
+        <button class="CloseButton" (click)="updateNotes()" (click)="reset=true">Close</button>
     </div>
+</div>
