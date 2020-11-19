@@ -1,9 +1,8 @@
 <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="10px" class="Margin">
-    <mat-card class="MatCard" *ngFor="let note of note;let i = index" (mouseenter)="onHover(i)"
+    <mat-card class="MatCard" *ngFor="let note of noteArray;let i = index" (mouseenter)="onHover(i)"
         (mouseleave)="onHover(-1)" [style.background]="note.color">
 
         <div >
-            
             <div fxLayout="row" fxLayoutAlign="space-between center" class="Title" 
             (click)="openDialog(note.title,note.message,note.id,note.color)">
                 {{note.title}}

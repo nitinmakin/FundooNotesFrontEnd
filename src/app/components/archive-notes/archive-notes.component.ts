@@ -5,12 +5,17 @@ import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 import { DataServiceService } from "../../Services/data-service.service";
 
 
+
 @Component({
-  selector: 'app-trash-notes',
-  templateUrl: './trash-notes.component.html',
-  styleUrls: ['./trash-notes.component.scss']
+  selector: 'app-archive-notes',
+  templateUrl: './archive-notes.component.html',
+  styleUrls: ['./archive-notes.component.scss']
 })
-export class TrashNotesComponent implements OnInit {
+export class ArchiveNotesComponent implements OnInit {
+
+ 
+
+
   note = [];
   constructor( private notes: NotesServiceService, public dialog: MatDialog, private data: DataServiceService) { }
 
@@ -21,7 +26,7 @@ export class TrashNotesComponent implements OnInit {
 
   displayNotes() {
     this.notes.getNotes().subscribe(result => {
-      this.note = result['data'].filter(any=>any.isTrash==true);
+      this.note = result['data'].filter(any=>any.isArchive==true);
       
      
      this.note.reverse();

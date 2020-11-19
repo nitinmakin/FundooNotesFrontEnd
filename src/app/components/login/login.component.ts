@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
      
         this.userService.setToken(result.data.token);
         console.log(result)
-        this._route.navigate(['dashboard'])
+        this._route.navigate(['dashboard/notes'])
       },
         (error) => {
           console.log(error)

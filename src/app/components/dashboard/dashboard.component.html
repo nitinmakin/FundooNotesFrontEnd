@@ -45,9 +45,12 @@
       </div>
 
       <div fxFlex="95%" fxLayoutAlign="start center" fxLayout="column">
-        <app-createnotes></app-createnotes>
+        <!-- <app-createnotes></app-createnotes>
       
-        <app-display-notes></app-display-notes>
+        <app-display-notes></app-display-notes> -->
+
+
+        <router-outlet></router-outlet>
       
       </div>
 
@@ -57,15 +60,11 @@
   <mat-drawer #drawer class="SlideBar" mode="side" (mouseleave)="drawer.toggle()" (mouseleave)="changeVisiblity()">
     <mat-selection-list [multiple]="false">
 
-      <div fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption">
-      
-      
-       
-        <!-- <mat-list-option class="SlideBarOption"> -->
-          <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">emoji_objects</mat-icon>
-          Notes
-        <!-- </mat-list-option> -->
-      </div>
+      <div  routerLink="/dashboard/notes"  fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption">
+        <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()" routerLink="/dashboard/notes" >emoji_objects</mat-icon>
+        Notes
+    
+      </div> 
 
       <div fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption">
         <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">notifications</mat-icon>
@@ -77,13 +76,13 @@
         Edit lable
       </div>
 
-      <div fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption"> 
-        <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()">archive</mat-icon>
+      <div routerLink="/dashboard/archive" fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption"> 
+        <mat-icon class="material-icons-outlined" (mouseenter)="drawer.toggle()" routerLink="/dashboard/archive">archive</mat-icon>
         Archive
       </div>
 
-      <div fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption">
-        <mat-icon (mouseenter)="drawer.toggle()" class="material-icons-outlined">delete</mat-icon>
+      <div routerLink="/dashboard/trash" fxLayout="row" fxLayoutAlign="start center" class="SlideBarOption">
+        <mat-icon (mouseenter)="drawer.toggle()" class="material-icons-outlined" routerLink="/dashboard/trash">delete</mat-icon>
         Bin
       </div>
     </mat-selection-list>

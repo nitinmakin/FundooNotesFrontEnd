@@ -13,6 +13,6 @@ public snakeBarMethod(message){
  
   setTimeout(() => {
     this.snakeBar.dismiss();
-  }, 2000)
+  }, 1000)
 }
 }

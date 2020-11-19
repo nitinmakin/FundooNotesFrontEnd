@@ -35,6 +35,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteNotesComponent } from './components/delete-notes/delete-notes.component';
 import { TrashNotesComponent } from './components/trash-notes/trash-notes.component';
 import { NotesComponent } from './components/notes/notes.component';
+import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.component';
 
 
 
@@ -52,7 +53,8 @@ import { NotesComponent } from './components/notes/notes.component';
     UpdateNotesComponent,
     DeleteNotesComponent,
     TrashNotesComponent,
-    NotesComponent
+    NotesComponent,
+    ArchiveNotesComponent
   ],
   imports: [
     MatSelectModule,

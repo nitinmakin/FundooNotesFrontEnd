@@ -13,7 +13,6 @@ export class NotesServiceService {
 
   baseUrl = environment.baseUrl;
 
-
   addNotes(data) {
     let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer '+localStorage.getItem('Token') }) }
     return this.httpService.post(`${this.baseUrl}Notes`, data, true,options)
@@ -32,6 +31,16 @@ export class NotesServiceService {
   deleteNotes(data){
     let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer '+localStorage.getItem('Token') }) }
     return this.httpService.delete(`${this.baseUrl}Notes/${data.id}`,true,options)
+  }
+
+  isArchive(data) {
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer '+localStorage.getItem('Token') }) }
+    return this.httpService.post(`${this.baseUrl}Notes/IsArchive/${data.id}`, data, true,options)
+  }
+
+  isTrash(data) {
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer '+localStorage.getItem('Token') }) }
+    return this.httpService.post(`${this.baseUrl}Notes/isTrash/${data.id}`, data, true,options)
   }
 
 }

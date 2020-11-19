@@ -1,11 +1,9 @@
 <div fxLayout="row" fxLayoutAlign="space-between center">
 
-
-
     <span class="material-icons Buttons">add_alert</span>
     <span class="material-icons Buttons">person_add_alt_1</span>
 
-    <span class="material-icons Buttons">archive</span>
+    <span class="material-icons Buttons"  (click)="archiveNotes()">archive</span>
     <button mat-icon-button [matMenuTriggerFor]="menu1" class="Buttons">
         <mat-icon class="material-icons-outlined">color_lens</mat-icon>
     </button>
@@ -39,7 +37,7 @@
 
     <mat-menu #menu="matMenu">
         <button class="Buttons1" (click)="deleteNotes()">Delete note</button>
-         <button class="Buttons1">Add lable</button>
+         <button class="Buttons1" (click)="trashNote()" >Trash note</button>
         <button class="Buttons1">Add drowing</button>
         <button class="Buttons1">Make a copy</button> 
 
