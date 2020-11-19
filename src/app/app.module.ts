@@ -33,6 +33,8 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
 import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteNotesComponent } from './components/delete-notes/delete-notes.component';
+import { TrashNotesComponent } from './components/trash-notes/trash-notes.component';
+import { NotesComponent } from './components/notes/notes.component';
 
 
 
@@ -48,7 +50,9 @@ import { DeleteNotesComponent } from './components/delete-notes/delete-notes.com
     DisplayNotesComponent,
     ButtonsComponent,
     UpdateNotesComponent,
-    DeleteNotesComponent
+    DeleteNotesComponent,
+    TrashNotesComponent,
+    NotesComponent
   ],
   imports: [
     MatSelectModule,

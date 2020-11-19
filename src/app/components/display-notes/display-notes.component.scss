@@ -13,13 +13,18 @@
   box-shadow: none;
   border: 0.5px solid rgb(225, 224, 224);
 }
+.mat-dialog-container {
+  padding: 0px !important;
+}
 
 .Margin{
   margin-left: 5%;
   margin-right: 2%;
  min-height: 120px;
 }
-
+.mat-dialog-container {
+  padding: 0px !important;
+}
 .Title{
   font-weight: bold;
   font-size: large;

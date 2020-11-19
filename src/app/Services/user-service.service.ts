@@ -4,8 +4,6 @@ import { HttpServiceService } from "./http-service.service";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 //import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 
-
-
 @Injectable({
   providedIn: 'root'
 })

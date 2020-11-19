@@ -1,14 +1,17 @@
-
-
-<div class="Responsive">
-    <div fxLayout="row" fxLayoutAlign="space-between center" >
-        <input  matInput placeholder="Title" id="test1" value="{{data.title}}" class="Title Title1" required>
-        <button class="Buttons"><span class="material-icons">push_pin</span></button>
+  <div class="Responsive" [style.background]="data.color" >
+    <div fxLayout="row" fxLayoutAlign="space-between center"  [style.background]="data.color">
+        <input matInput placeholder="Title" id="test1" value="{{data.title}}" class="Title Title1"  [style.background]="data.color" required>
+        <button [style.background]="data.color" class="bin Buttons"><span class="material-icons"  [style.background]="data.color">push_pin</span></button>
     </div>
-    <input id="test2" matInput placeholder="Take a note" value="{{data.message}}" class="Title" required><br><br>
+    <input id="test2" matInput placeholder="Take a note" value="{{data.message}}" [style.background]="data.color"  class="Title" required><br><br>
 
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutAlign.xs="end end">
-        <app-delete-notes></app-delete-notes>
-        <button class="CloseButton" (click)="updateNotes()" (click)="reset=true">Close</button>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutAlign.xs="end end" 
+     [style.background]="data.color">
+     
+     <app-delete-notes ></app-delete-notes>
+        <button  [style.background]="data.color" class="CloseButton" (click)="updateNotes()">Close</button>
     </div>
-</div>
+</div> 
+  
+
+  <!-- <app-createnotes></app-createnotes> -->

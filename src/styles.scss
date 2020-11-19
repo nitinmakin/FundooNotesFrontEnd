@@ -2,3 +2,11 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/*Material Dialog Custom Css*/
+.custom-dialog-container .mat-dialog-container{
+    padding: 0;
+}
+
+.custom-dialog-container .mat-dialog-container .mat-dialog-content{
+    margin: 0;
+}
