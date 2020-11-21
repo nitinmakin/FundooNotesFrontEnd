@@ -1,13 +1,12 @@
 .MatCard{
   margin-top: 30px;
- 
    width: 220px;
   // height: 130px auto;
    border-radius: 8px;
    display: flex;
    flex-direction: column;
    flex-wrap: wrap;
-   height: 140px;
+  min-height: 100px;
   // font-size: xx-large;
   margin-left: 10px;
   box-shadow: none;
@@ -20,7 +19,7 @@
 .Margin{
   margin-left: 5%;
   margin-right: 2%;
- min-height: 120px;
+  // min-height: 120px;
 }
 .mat-dialog-container {
   padding: 0px !important;
@@ -38,7 +37,7 @@
 .MatCard:hover{
     margin-top: 30px;
     width: 220px;
-   min-height: 140px;
+  min-height: 80px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -72,8 +71,8 @@ padding-right: 4px;
 
 .MatCard{
     margin-left: 12%;
-     width: 300px;
-     height: 80px ;
+     min-width: 300px;
+     min-height: 80px ;
 }
 
   }
@@ -85,7 +84,7 @@ padding-right: 4px;
 
 .MatCard{
     margin-left: 12%;
-     width: 230px;
-     height: 80px 
+     min-width: 230px;
+     min-height: 80px 
 }
   }

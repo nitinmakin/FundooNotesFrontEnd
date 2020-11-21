@@ -11,21 +11,22 @@ import { DataServiceService } from "../../Services/data-service.service";
 
 export class DeleteNotesComponent implements OnInit {
 
-  constructor(private note: NotesServiceService, public snakeBar: UtilityServiceService,private data:DataServiceService) { }
+  constructor(private note: NotesServiceService, public snakeBar: UtilityServiceService, private data: DataServiceService) { }
   @Input() noteArray
   @Output() operation = new EventEmitter<any>();
-
+  @Input() isTrash: any
+  @Input() isArchive: any
   getColor(color) {
     let noteColorData = {
       "color": color,
       "id": this.noteArray.id,
       "title": this.noteArray.title,
       "message": this.noteArray.message,
-      "isArchive":this.noteArray.isArchive,
-      "isTrash":this.noteArray.isTrash
+      "isArchive": this.noteArray.isArchive,
+      "isTrash": this.noteArray.isTrash
     }
-
-    console.log(this.noteArray)
+    this.data.changeMessage({});
+    console.log("note array is "+this.noteArray.id)
     this.note.updateNotes(noteColorData).subscribe(response => {
       this.operation.emit();
       this.data.changeMessage({});
@@ -41,12 +42,12 @@ export class DeleteNotesComponent implements OnInit {
     let data = {
       "id": [this.noteArray.id]
     }
-  
+
     this.note.deleteNotes(data).subscribe((result: any) => {
-      this.snakeBar.snakeBarMethod("Note deleted Successfully"+data.id)
+      this.snakeBar.snakeBarMethod("Note deleted Successfully")
       this.operation.emit();
       this.data.changeMessage({});
-     // console.log("data is "+data.id)
+      // console.log("data is "+data.id)
 
     },
       (error) => {
@@ -54,43 +55,46 @@ export class DeleteNotesComponent implements OnInit {
       })
   }
 
-  archiveNotes(){
-  let data = {
-    "id": [this.noteArray.id]
+  archiveNotes() {
+    let data = {
+      "id": [this.noteArray.id]
+    }
+  
+      this.note.isArchive(data).subscribe((result: any) => {
+        this.snakeBar.snakeBarMethod("Note archived successfully")
+        this.operation.emit();
+        this.data.changeMessage({});
+
+      },
+        (error) => {
+          this.snakeBar.snakeBarMethod("OOPS..somethimg went wrong...")
+        })
+    
+
   }
 
-  this.note.isArchive(data).subscribe((result: any) => {
-    this.snakeBar.snakeBarMethod("Note Archived Successfully")
-     this.operation.emit();
-     this.data.changeMessage({});
 
-  },
-    (error) => {
-      this.snakeBar.snakeBarMethod("OOPS..somethimg went wrong...")
-    })
-}
+  trashNote() {
+    let data = {
+      "id": [this.noteArray.id]
+    }
 
+    console.log("data1 id is " + data.id)
 
-trashNote(){
-  let data = {
-    "id": [this.noteArray.id]
+    this.note.isTrash(data).subscribe((result: any) => {
+      this.snakeBar.snakeBarMethod("Note trashed Successfully")
+      this.operation.emit();
+      this.data.changeMessage({});
+
+    },
+      (error) => {
+        this.snakeBar.snakeBarMethod("OOPS..somethimg went wrong...")
+      })
   }
-
-  console.log("data1 id is "+data.id)
-
-  this.note.isTrash(data).subscribe((result: any) => {
-    this.snakeBar.snakeBarMethod("Note trashed Successfully")
-     this.operation.emit();
-     this.data.changeMessage({});
-
-  },
-    (error) => {
-      this.snakeBar.snakeBarMethod("OOPS..somethimg went wrong...")
-    })
-}
 
 
   ngOnInit(): void {
+  
   }
 
 }

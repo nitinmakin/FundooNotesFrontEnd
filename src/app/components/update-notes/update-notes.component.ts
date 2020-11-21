@@ -19,8 +19,6 @@ export class UpdateNotesComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA)public data:any, private notes: NotesServiceService,
    private dataService: DataServiceService, public snkBar:UtilityServiceService) {}
 
-   
-
   updateNotes() {
       let noteData = {
         "Title": (<HTMLInputElement>document.getElementById('test1')).value,
@@ -29,8 +27,8 @@ export class UpdateNotesComponent implements OnInit {
         "color" : this.data.color,
         "isArchive":this.data.isArchive,
         "isTrash":this.data.isTrash
-
       }
+    
         this.notes.updateNotes(noteData).subscribe((result: any) => {
           this.snkBar.snakeBarMethod("Note updated Successfully")
           this.dataService.changeMessage({});
@@ -42,6 +40,7 @@ export class UpdateNotesComponent implements OnInit {
       }
 
   ngOnInit(): void {
+   
   }
 
 }

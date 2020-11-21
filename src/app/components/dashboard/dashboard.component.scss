@@ -22,25 +22,46 @@
     margin-top: 7px;
     padding-right: 50px ; 
 }
+.abc{
+  border: none;
+  width: 100% auto;
+  margin-left: 10px;
 
+  background-color:rgb(247, 247, 247);
+  font-size: larger;
+
+}
 .SearchBar{
 border-color: rgb(212, 212, 212);
 width: 800px;
-height: 45px;
+height: 40px;
 border: none;
 background-color: whitesmoke;
 border-radius: 10px;
 size: 40px;
 outline: none;
+display: flex;
+justify-content: flex-start;
+}
+// ::ng-deep .mat-menu-panel{
+//   width: 250px;
+//   height: 300px;
+  
+// }
+.LogoutButton{
+  border: 1px solid rgb(233, 233, 233);
+ // color: rgb(133, 125, 125);
+  font-weight: bold;
+  width: 220px;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+//  margin-left: 10px;
+  outline: none;
+  margin-top: 130px;
 }
 
-.LogoutButton{
-  border: none;
-  color: rgb(133, 125, 125);
-  font-weight: bold;
-  width: 80px;
-  background-color: rgb(187, 189, 190);
-}
 
 .Menu1{
       padding-left: 110px;

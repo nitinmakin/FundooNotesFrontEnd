@@ -9,18 +9,24 @@
     <img src="../../../assets/icons8-google-keep-48.png">
     <h2 class="Keep">Fundoo</h2>
   <div fxHide.gt-xs>  <span class="material-icons" >search</span></div>
-      <input type="search" placeholder="Search" fxHide.xs class="SearchBar">
+      <!-- <input type="search" placeholder="Search" fxHide.xs class="SearchBar"> -->
+      <div class="SearchBar" fxHide.xs>
+        <mat-icon style="margin-top: 10px;">search</mat-icon>
+            <input type="search" placeholder="search" class="abc">
+      </div>
      
    
     <button mat-button [matMenuTriggerFor]="beforeMenu" class="Menu1">
       <mat-icon class="material-icons-outlined">account_circle</mat-icon>
     </button>
-    <mat-menu #beforeMenu="matMenu" xPosition="before" fxLayoutAlign="center start">
-      <mat-icon class="material-icons-outlined">account_circle</mat-icon>
-      <p>Nitin Makin</p>
-      <p>nitinmakin124@gmail.com</p>
-      <button type="submit" (click)="logout()" class="LogoutButton">Log Out</button>
+    <div fxLayoutAlign="center center" style="height: 300px;">
+    <mat-menu #beforeMenu="matMenu" xPosition="before" fxLayoutAlign="center center">
+      <mat-icon style="margin-left: 110px;"  >account_circle</mat-icon><br><br>
+      <p style="display: flex; justify-content: center;">Nitin Makin</p>
+      <p style="display: flex; justify-content: center;">nitinmakin124@gmail.com</p>
+      <input  type="submit" value="Sign out of all accounts" (click)="logout()" class="LogoutButton">
     </mat-menu>
+    </div>
   </div>
 
 

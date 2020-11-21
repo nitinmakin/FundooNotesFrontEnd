@@ -4,8 +4,6 @@ import {MatDialog} from '@angular/material/dialog';
 import { UpdateNotesComponent } from '../update-notes/update-notes.component';
 import { DataServiceService } from "../../Services/data-service.service";
 
-
-
 @Component({
   selector: 'app-archive-notes',
   templateUrl: './archive-notes.component.html',
@@ -13,10 +11,9 @@ import { DataServiceService } from "../../Services/data-service.service";
 })
 export class ArchiveNotesComponent implements OnInit {
 
- 
-
 
   note = [];
+  isArchive=true;
   constructor( private notes: NotesServiceService, public dialog: MatDialog, private data: DataServiceService) { }
 
   ngOnInit(): void {
@@ -26,7 +23,7 @@ export class ArchiveNotesComponent implements OnInit {
 
   displayNotes() {
     this.notes.getNotes().subscribe(result => {
-      this.note = result['data'].filter(any=>any.isArchive==true);
+      this.note = result['data'].filter(any=>any.isArchive==true && any.isTrash==false);
       
      
      this.note.reverse();

@@ -1,9 +1,10 @@
-<div fxLayout="row" fxLayoutAlign="space-between center">
+<div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;"  *ngIf="!isTrash">
 
     <span class="material-icons Buttons">add_alert</span>
     <span class="material-icons Buttons">person_add_alt_1</span>
 
-    <span class="material-icons Buttons"  (click)="archiveNotes()">archive</span>
+    <span class="material-icons Buttons"  (click)="archiveNotes()"  *ngIf="!isArchive">archive</span>
+    <span class="material-icons Buttons" (click)="archiveNotes()" *ngIf="isArchive">unarchive</span>
     <button mat-icon-button [matMenuTriggerFor]="menu1" class="Buttons">
         <mat-icon class="material-icons-outlined">color_lens</mat-icon>
     </button>
@@ -36,12 +37,24 @@
     <span class="material-icons Buttons" [matMenuTriggerFor]="menu">more_vert</span>
 
     <mat-menu #menu="matMenu">
-        <button class="Buttons1" (click)="deleteNotes()">Delete note</button>
-         <button class="Buttons1" (click)="trashNote()" >Trash note</button>
+        <!-- <button class="Buttons1" (click)="deleteNotes()">Delete note</button> -->
+         <button class="Buttons1" (click)="trashNote()" >Delete note</button>
         <button class="Buttons1">Add drowing</button>
         <button class="Buttons1">Make a copy</button> 
 
     </mat-menu>
 
 
+   
+
+
 </div>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" style="width: 60px;"  *ngIf="isTrash">
+    <!-- <span class="material-icons Buttons" >archive</span> -->
+    <span class="material-icons Buttons" (click)="trashNote()" >restore_from_trash</span>
+    <span class="material-icons Buttons"  (click)="deleteNotes()" >
+        delete_sweep
+        </span>
+</div>
+

@@ -12,6 +12,7 @@ import { DataServiceService } from "../../Services/data-service.service";
 })
 export class TrashNotesComponent implements OnInit {
   note = [];
+  isTrash=true;
   constructor( private notes: NotesServiceService, public dialog: MatDialog, private data: DataServiceService) { }
 
   ngOnInit(): void {

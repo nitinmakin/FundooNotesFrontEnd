@@ -13,12 +13,14 @@
             <input formControlName="title" matInput placeholder="Title" class="Title Title1" required>
             <button class="Buttons"><span class="material-icons">push_pin</span></button>
           </div>
-          <input formControlName="description" matInput placeholder="Take a note" class="Title" required><br><br>
+          <!-- <input formControlName="description" matInput placeholder="Take a note" class="Title" required><br><br> -->
+        
+          <textarea matInput formControlName="description" matInput placeholder="Take a note..." class="Title" required></textarea>
       
           <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutAlign.xs="end end" >
             <!-- <app-buttons></app-buttons> -->
 
-            <app-delete-notes></app-delete-notes>
+            <app-delete-notes  [noteArray]="note"></app-delete-notes>
             <button (click)="addNotes()" (click)="reset=true" class="CloseButton">Close</button>
           </div>
           
